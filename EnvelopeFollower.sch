@@ -5,8 +5,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 1
 Title "EnvelopeFollower"
-Date "2020-09-03"
-Rev "V1.0"
+Date "2020-09-20"
+Rev "V2.0"
 Comp "Content"
 Comment1 ""
 Comment2 ""
@@ -117,7 +117,7 @@ U 1 1 5F55E5D9
 P 1450 1200
 F 0 "C2" V 1600 1150 50  0000 L CNN
 F 1 "47u" V 1300 1150 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 1488 1050 50  0001 C CNN
+F 2 "MyLibrary:CP_Radial_D5.0mm_PWideForPower" H 1488 1050 50  0001 C CNN
 F 3 "~" H 1450 1200 50  0001 C CNN
 	1    1450 1200
 	1    0    0    -1  
@@ -340,7 +340,7 @@ F 1 "COLOUR B100k" V 1384 2450 50  0000 C CNN
 F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 1500 2450 50  0001 C CNN
 F 3 "~" H 1500 2450 50  0001 C CNN
 	1    1500 2450
-	0    1    1    0   
+	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	1350 2450 1200 2450
@@ -381,8 +381,6 @@ F 3 "" H 3100 1600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3100 1600 3100 1550
-Wire Notes Line
-	3400 2000 3400 550 
 $Comp
 L Amplifier_Operational:TL074 U1
 U 4 1 5F588258
@@ -394,42 +392,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 2000 4500 50  0001 C CNN
 	4    1950 4300
 	1    0    0    -1  
 $EndComp
-$Comp
-L Isolator:VTL5C U4
-U 1 1 5F58C13F
-P 4200 1600
-F 0 "U4" H 4200 1917 50  0000 C CNN
-F 1 "VTL5C" H 4200 1826 50  0000 C CNN
-F 2 "OptoDevice:PerkinElmer_VTL5C" H 4200 1600 50  0001 C CNN
-F 3 "http://www.qsl.net/wa1ion/vactrol/vactrol.pdf" H 4250 1350 50  0001 C CNN
-	1    4200 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Isolator:VTL5C U3
-U 1 1 5F58E3F0
-P 4200 1000
-F 0 "U3" H 4200 1317 50  0000 C CNN
-F 1 "VTL5C" H 4200 1226 50  0000 C CNN
-F 2 "OptoDevice:PerkinElmer_VTL5C" H 4200 1000 50  0001 C CNN
-F 3 "http://www.qsl.net/wa1ion/vactrol/vactrol.pdf" H 4250 750 50  0001 C CNN
-	1    4200 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4550 900  4500 900 
-Wire Wire Line
-	3850 900  3900 900 
-Wire Wire Line
-	4550 1100 4500 1100
-Wire Wire Line
-	3850 1100 3900 1100
-Wire Notes Line
-	550  550  5000 550 
-Wire Notes Line
-	550  2000 5000 2000
-Text Notes 3450 1950 0    50   Italic 10
-Vactrols
 $Comp
 L Device:R R7
 U 1 1 5F5A46EF
@@ -600,8 +562,6 @@ F 3 "http://www.ti.com/lit/ds/symlink/tl071.pdf" H 3450 4600 50  0001 C CNN
 	1    3400 4400
 	1    0    0    1   
 $EndComp
-Wire Wire Line
-	2750 4300 2550 4300
 Connection ~ 2550 4300
 Wire Wire Line
 	3900 3900 3900 4000
@@ -615,8 +575,6 @@ Wire Wire Line
 Wire Wire Line
 	3400 3850 3400 4000
 Connection ~ 3400 4000
-Wire Wire Line
-	2850 4300 3050 4300
 $Comp
 L power:VCC #PWR011
 U 1 1 5F6449DB
@@ -634,7 +592,6 @@ Wire Wire Line
 	3100 4550 3100 4500
 Wire Wire Line
 	3050 4300 3050 4000
-Connection ~ 3050 4300
 Wire Wire Line
 	3050 4300 3100 4300
 Wire Wire Line
@@ -684,7 +641,7 @@ U 1 1 5F65CA5D
 P 2300 5750
 F 0 "SW1" H 2250 5900 50  0000 C CNN
 F 1 "Moog" H 2250 5650 50  0000 C CNN
-F 2 "Switches:SWITCH_SPDT_PTH_11.6X4.0MM" H 2300 5750 50  0001 C CNN
+F 2 "MyLibrary:SWITCH_SPDT_PTH_12.9X6.9MM" H 2300 5750 50  0001 C CNN
 F 3 "~" H 2300 5750 50  0001 C CNN
 	1    2300 5750
 	-1   0    0    1   
@@ -736,9 +693,6 @@ Wire Wire Line
 Connection ~ 3800 4400
 Wire Wire Line
 	3800 4400 4000 4400
-Wire Wire Line
-	4100 4400 4000 4400
-Connection ~ 4000 4400
 $Comp
 L Device:R R9
 U 1 1 5F658F26
@@ -915,12 +869,9 @@ $EndComp
 Wire Wire Line
 	6100 4500 5950 4500
 Wire Wire Line
-	4200 4400 4450 4400
-Wire Wire Line
 	4350 4000 4400 4000
 Wire Wire Line
 	4450 4400 4450 4000
-Connection ~ 4450 4400
 Wire Wire Line
 	4450 4400 4500 4400
 Connection ~ 4450 4000
@@ -1029,11 +980,11 @@ L Device:R_POT RV3
 U 1 1 5F591DBF
 P 7150 5100
 F 0 "RV3" H 7350 5000 50  0000 R CNN
-F 1 "BLEND B10k" V 7000 5250 50  0000 R CNN
+F 1 "BLEND B10k" V 7000 5400 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 7150 5100 50  0001 C CNN
 F 3 "~" H 7150 5100 50  0001 C CNN
 	1    7150 5100
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 Wire Wire Line
 	7150 4950 7150 4900
@@ -1067,7 +1018,7 @@ F 1 "SENSITIVITY B10k" V 5850 6650 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 6000 6300 50  0001 C CNN
 F 3 "~" H 6000 6300 50  0001 C CNN
 	1    6000 6300
-	1    0    0    1   
+	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	6000 6150 6000 5850
@@ -1230,17 +1181,6 @@ Wire Wire Line
 Wire Wire Line
 	7750 4900 7700 4900
 Connection ~ 7700 4900
-$Comp
-L Connector_Generic:Conn_01x03 J9
-U 1 1 5F623898
-P 6650 3750
-F 0 "J9" V 6850 3700 50  0000 L CNN
-F 1 "SW1A" V 6750 3650 50  0000 L CNN
-F 2 "Connector_Wire:SolderWire-0.25sqmm_1x03_P4.2mm_D0.65mm_OD1.7mm" H 6650 3750 50  0001 C CNN
-F 3 "~" H 6650 3750 50  0001 C CNN
-	1    6650 3750
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
 	6400 4500 6650 4500
 Wire Wire Line
@@ -1248,16 +1188,16 @@ Wire Wire Line
 $Comp
 L power:GND #PWR021
 U 1 1 5F631BCA
-P 6550 4050
-F 0 "#PWR021" H 6550 3800 50  0001 C CNN
-F 1 "GND" H 6555 3877 50  0000 C CNN
-F 2 "" H 6550 4050 50  0001 C CNN
-F 3 "" H 6550 4050 50  0001 C CNN
-	1    6550 4050
+P 6350 3850
+F 0 "#PWR021" H 6350 3600 50  0001 C CNN
+F 1 "GND" H 6355 3677 50  0000 C CNN
+F 2 "" H 6350 3850 50  0001 C CNN
+F 3 "" H 6350 3850 50  0001 C CNN
+	1    6350 3850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6550 4050 6550 3950
+	6350 3850 6350 3750
 $Comp
 L Connector_Generic:Conn_01x01 J10
 U 1 1 5F63AB1A
@@ -1269,10 +1209,6 @@ F 3 "~" H 7000 3500 50  0001 C CNN
 	1    7000 3500
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	6750 3950 6750 4100
-Wire Wire Line
-	6750 4100 7000 4100
 Wire Wire Line
 	7000 4100 7000 3950
 $Comp
@@ -1323,17 +1259,6 @@ Wire Wire Line
 	7250 3450 7250 3400
 Wire Wire Line
 	7500 3450 7500 3400
-$Comp
-L Connector_Generic:Conn_01x03 J13
-U 1 1 5F65BABF
-P 7950 3750
-F 0 "J13" V 8150 3700 50  0000 L CNN
-F 1 "SW1B" V 8050 3650 50  0000 L CNN
-F 2 "Connector_Wire:SolderWire-0.25sqmm_1x03_P4.2mm_D0.65mm_OD1.7mm" H 7950 3750 50  0001 C CNN
-F 3 "~" H 7950 3750 50  0001 C CNN
-	1    7950 3750
-	0    1    -1   0   
-$EndComp
 Wire Wire Line
 	7850 3950 7000 3950
 Connection ~ 7000 3950
@@ -1342,16 +1267,16 @@ Wire Wire Line
 $Comp
 L Connector_Generic:Conn_01x01 J14
 U 1 1 5F66614D
-P 7950 4250
-F 0 "J14" H 7950 4150 50  0000 C CNN
-F 1 "OUT" V 8050 4250 50  0000 C CNN
-F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 7950 4250 50  0001 C CNN
-F 3 "~" H 7950 4250 50  0001 C CNN
-	1    7950 4250
+P 7900 4600
+F 0 "J14" H 7900 4500 50  0000 C CNN
+F 1 "OUT" V 8000 4600 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 7900 4600 50  0001 C CNN
+F 3 "~" H 7900 4600 50  0001 C CNN
+	1    7900 4600
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7950 4050 7950 3950
+	7900 4400 7900 4300
 Wire Wire Line
 	8050 4900 8050 3950
 Wire Wire Line
@@ -1552,7 +1477,7 @@ F 1 "ATTACK B5K" V 10400 5750 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 10600 5550 50  0001 C CNN
 F 3 "~" H 10600 5550 50  0001 C CNN
 	1    10600 5550
-	0    -1   1    0   
+	0    1    1    0   
 $EndComp
 Wire Wire Line
 	10450 5550 10300 5550
@@ -1614,7 +1539,7 @@ F 1 "DECAY A100K" V 11400 6300 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 11500 6100 50  0001 C CNN
 F 3 "~" H 11500 6100 50  0001 C CNN
 	1    11500 6100
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	11500 5950 11500 5550
@@ -1714,7 +1639,7 @@ L Device:R R22
 U 1 1 5F963317
 P 12250 5050
 F 0 "R22" V 12150 5000 50  0000 L CNN
-F 1 "1M8" V 12250 4950 50  0000 L CNN
+F 1 "330r" V 12250 4950 50  0000 L CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 12180 5050 50  0001 C CNN
 F 3 "~" H 12250 5050 50  0001 C CNN
 	1    12250 5050
@@ -1730,11 +1655,11 @@ L Device:R_POT RV6
 U 1 1 5F9718A9
 P 12250 5500
 F 0 "RV6" H 12450 5400 50  0000 R CNN
-F 1 "INTENSITY B1K" V 12150 5700 50  0000 R CNN
+F 1 "INTENSITY B1K" V 12150 5850 50  0000 R CNN
 F 2 "Potentiometer_THT:Potentiometer_Omeg_PC16BU_Vertical" H 12250 5500 50  0001 C CNN
 F 3 "~" H 12250 5500 50  0001 C CNN
 	1    12250 5500
-	-1   0    0    -1  
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	12250 5350 12250 5250
@@ -1813,8 +1738,6 @@ F 3 "~" H 12100 8500 50  0001 C CNN
 	1    12100 8500
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	12250 7550 12500 7550
 $Comp
 L Device:LED D6
 U 1 1 5FA96AA7
@@ -1840,38 +1763,12 @@ Connection ~ 11850 8050
 Wire Wire Line
 	11850 8050 11850 7550
 Wire Wire Line
-	11850 7550 11850 6850
-Wire Wire Line
-	11850 6850 12200 6850
+	11850 7550 11850 7150
 Connection ~ 11850 7550
 Wire Wire Line
 	12750 8500 13000 8500
 Wire Wire Line
-	13000 8500 13000 8050
-Wire Wire Line
-	13000 7550 12700 7550
-Wire Wire Line
-	12700 8050 13000 8050
-Connection ~ 13000 8050
-Wire Wire Line
-	13000 8050 13000 7550
-Wire Wire Line
-	13000 7550 13000 6850
-Wire Wire Line
-	12300 6850 13000 6850
-Connection ~ 13000 7550
-Wire Wire Line
 	7300 5100 7300 4900
-Wire Wire Line
-	12500 8050 12250 8050
-Wire Wire Line
-	12500 8000 12500 8050
-Wire Wire Line
-	12700 8000 12700 8050
-Wire Wire Line
-	12500 7550 12500 7500
-Wire Wire Line
-	12700 7550 12700 7500
 $Comp
 L Device:R R20
 U 1 1 5FB73298
@@ -1882,25 +1779,6 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 12030 8050
 F 3 "~" H 12100 8050 50  0001 C CNN
 	1    12100 8050
 	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	3900 1500 3850 1500
-Wire Wire Line
-	3900 1700 3850 1700
-Wire Wire Line
-	4500 1500 4550 1500
-Wire Wire Line
-	4500 1700 4550 1700
-$Comp
-L Connector_Generic:Conn_01x03 J20
-U 1 1 5FDCB234
-P 12100 1800
-F 0 "J20" V 12300 1750 50  0000 L CNN
-F 1 "SW1C" V 12200 1700 50  0000 L CNN
-F 2 "Connector_Wire:SolderWire-0.25sqmm_1x03_P4.2mm_D0.65mm_OD1.7mm" H 12100 1800 50  0001 C CNN
-F 3 "~" H 12100 1800 50  0001 C CNN
-	1    12100 1800
-	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	5400 1000 5450 1000
@@ -2009,20 +1887,17 @@ NoConn ~ 10900 2150
 Wire Notes Line
 	11400 2200 11400 500 
 NoConn ~ 8450 2050
-NoConn ~ 12200 1600
 $Comp
 L power:GND #PWR031
 U 1 1 5FBDEC1C
-P 12350 1600
-F 0 "#PWR031" H 12350 1350 50  0001 C CNN
-F 1 "GND" H 12355 1427 50  0000 C CNN
-F 2 "" H 12350 1600 50  0001 C CNN
-F 3 "" H 12350 1600 50  0001 C CNN
-	1    12350 1600
+P 12050 1900
+F 0 "#PWR031" H 12050 1650 50  0001 C CNN
+F 1 "GND" H 12055 1727 50  0000 C CNN
+F 2 "" H 12050 1900 50  0001 C CNN
+F 3 "" H 12050 1900 50  0001 C CNN
+	1    12050 1900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	12100 1550 12100 1600
 $Comp
 L Device:LED D7
 U 1 1 5FBF0401
@@ -2036,8 +1911,6 @@ F 3 "~" H 11850 1350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	11850 1500 11850 1600
-Wire Wire Line
-	11850 1600 12000 1600
 $Comp
 L Device:R R23
 U 1 1 5FC02C59
@@ -2064,10 +1937,6 @@ F 3 "" H 11850 800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	11850 800  11850 850 
-Wire Wire Line
-	12350 1600 12350 1550
-Wire Wire Line
-	12350 1550 12100 1550
 Wire Notes Line
 	12600 500  12600 2200
 Wire Notes Line
@@ -2084,40 +1953,24 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0101
 U 1 1 5FDD149B
-P 11850 6550
-F 0 "#PWR0101" H 11850 6300 50  0001 C CNN
-F 1 "GND" H 11855 6377 50  0000 C CNN
-F 2 "" H 11850 6550 50  0001 C CNN
-F 3 "" H 11850 6550 50  0001 C CNN
-	1    11850 6550
+P 11800 6400
+F 0 "#PWR0101" H 11800 6150 50  0001 C CNN
+F 1 "GND" H 11805 6227 50  0000 C CNN
+F 2 "" H 11800 6400 50  0001 C CNN
+F 3 "" H 11800 6400 50  0001 C CNN
+	1    11800 6400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	11850 6550 11850 6500
+	11800 6400 11800 6350
 Text Label 6950 1000 2    50   ~ 0
 UDA
 Text Label 6950 1800 2    50   ~ 0
 UDC
-Text Label 11850 6500 1    50   ~ 0
+Text Label 11800 6350 1    50   ~ 0
 UDC
 Text Label 12000 6300 3    50   ~ 0
 UDA
-Text Label 3850 900  2    50   Italic 10
-Vact1-1
-Text Label 3850 1100 2    50   Italic 10
-Vact1-2
-Text Label 3850 1500 2    50   Italic 10
-Vact2-1
-Text Label 3850 1700 2    50   Italic 10
-Vact2-2
-Text Label 4550 900  0    50   Italic 10
-Vact1-3
-Text Label 4550 1100 0    50   Italic 10
-Vact1-4
-Text Label 4550 1500 0    50   Italic 10
-Vact2-3
-Text Label 4550 1700 0    50   Italic 10
-Vact2-4
 Text Label 5400 1000 2    50   Italic 10
 RangeA
 Text Label 5400 1400 2    50   Italic 10
@@ -2162,21 +2015,13 @@ Text Label 10950 850  0    50   ~ 0
 Mode2
 Text Label 10950 950  0    50   ~ 0
 Mode3
-Text Label 12700 8000 1    50   Italic 10
-Vact2-1
-Text Label 12500 8000 1    50   Italic 10
-Vact2-2
-Text Label 12700 7500 1    50   Italic 10
-Vact1-1
-Text Label 12500 7500 1    50   Italic 10
-Vact1-2
-Text Label 12500 6850 1    50   ~ 0
+Text Label 13000 6850 1    50   ~ 0
 UD9
-Text Label 12300 6850 1    50   ~ 0
+Text Label 12650 6850 1    50   ~ 0
 UD6
-Text Label 12200 6850 1    50   ~ 0
+Text Label 12350 6850 1    50   ~ 0
 UD5
-Text Label 12000 6850 1    50   ~ 0
+Text Label 11850 6850 1    50   ~ 0
 UD2
 Text Label 12250 6300 3    50   ~ 0
 UDB
@@ -2190,10 +2035,6 @@ Text Label 7150 5350 3    50   ~ 0
 ModeA
 Text Label 4800 5050 2    50   ~ 0
 Mode1
-Text Label 4200 4400 3    50   Italic 10
-Vact2-4
-Text Label 4100 4400 3    50   Italic 10
-Vact2-3
 Text Label 3800 4500 3    50   ~ 0
 Mode2
 Text Label 4800 3800 2    50   Italic 10
@@ -2210,10 +2051,6 @@ Text Label 3900 3900 1    50   Italic 10
 RangeA
 Text Label 2650 5050 0    50   ~ 0
 Mode3
-Text Label 2750 4300 3    50   Italic 10
-Vact1-3
-Text Label 2850 4300 3    50   Italic 10
-Vact1-4
 Text Label 3450 3850 0    50   Italic 10
 Range4
 Text Label 3450 3600 0    50   Italic 10
@@ -2222,4 +2059,201 @@ Text Label 3450 3200 0    50   Italic 10
 Range2
 Text Label 3450 2800 0    50   Italic 10
 Range1
+$Comp
+L MyGlobalLibrary:D_LDR V1R1
+U 1 1 5F77394A
+P 2800 4300
+F 0 "V1R1" V 3007 4300 50  0000 C CNN
+F 1 "D_LDR" V 2916 4300 50  0000 C CNN
+F 2 "MyLibrary:R_LDR_5.2x5.2mm_P3.5mm_Horizontal" V 2850 4050 50  0001 L CNN
+F 3 "~" H 2800 4250 50  0001 C CNN
+	1    2800 4300
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2550 4300 2650 4300
+Wire Wire Line
+	2950 4300 3050 4300
+Connection ~ 3050 4300
+$Comp
+L MyGlobalLibrary:D_LDR V2R1
+U 1 1 5F7A0502
+P 4200 4400
+F 0 "V2R1" V 4407 4400 50  0000 C CNN
+F 1 "D_LDR" V 4316 4400 50  0000 C CNN
+F 2 "MyLibrary:R_LDR_5.2x5.2mm_P3.5mm_Horizontal" V 4250 4150 50  0001 L CNN
+F 3 "~" H 4200 4350 50  0001 C CNN
+	1    4200 4400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4050 4400 4000 4400
+Connection ~ 4000 4400
+Wire Wire Line
+	4350 4400 4450 4400
+Connection ~ 4450 4400
+Wire Wire Line
+	13000 6850 13000 7150
+$Comp
+L MyGlobalLibrary:D_Photo V1D1
+U 1 1 5F7CE75E
+P 12550 7550
+F 0 "V1D1" H 12500 7333 50  0000 C CNN
+F 1 "D_Photo" H 12500 7424 50  0000 C CNN
+F 2 "MyLibrary:LED_D5.0mm" H 12500 7550 50  0001 C CNN
+F 3 "~" H 12500 7550 50  0001 C CNN
+	1    12550 7550
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12450 7550 12250 7550
+Wire Wire Line
+	12750 7550 13000 7550
+Connection ~ 13000 7550
+Wire Wire Line
+	13000 7550 13000 8050
+$Comp
+L MyGlobalLibrary:D_Photo V2D1
+U 1 1 5F7F2B60
+P 12550 8050
+F 0 "V2D1" H 12500 7833 50  0000 C CNN
+F 1 "D_Photo" H 12500 7924 50  0000 C CNN
+F 2 "MyLibrary:LED_D5.0mm" H 12500 8050 50  0001 C CNN
+F 3 "~" H 12500 8050 50  0001 C CNN
+	1    12550 8050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	12450 8050 12250 8050
+Wire Wire Line
+	12750 8050 13000 8050
+Connection ~ 13000 8050
+Wire Wire Line
+	13000 8050 13000 8500
+Wire Notes Line
+	550  2000 3400 2000
+Wire Notes Line
+	3400 550  3400 2000
+Wire Notes Line
+	3400 550  550  550 
+$Comp
+L Connector_Generic:Conn_01x01 J22
+U 1 1 5F8F8BA1
+P 8050 3750
+F 0 "J22" H 8050 3650 50  0000 C CNN
+F 1 "1B1" V 8150 3750 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 8050 3750 50  0001 C CNN
+F 3 "~" H 8050 3750 50  0001 C CNN
+	1    8050 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J21
+U 1 1 5F8FD70D
+P 7900 4100
+F 0 "J21" H 7900 4000 50  0000 C CNN
+F 1 "1B2" V 8000 4100 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 7900 4100 50  0001 C CNN
+F 3 "~" H 7900 4100 50  0001 C CNN
+	1    7900 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J20
+U 1 1 5F8FDE8A
+P 7850 3750
+F 0 "J20" H 7850 3650 50  0000 C CNN
+F 1 "1B3" V 7950 3750 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 7850 3750 50  0001 C CNN
+F 3 "~" H 7850 3750 50  0001 C CNN
+	1    7850 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J2
+U 1 1 5F937209
+P 6350 3550
+F 0 "J2" H 6350 3450 50  0000 C CNN
+F 1 "1A3" V 6450 3550 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 6350 3550 50  0001 C CNN
+F 3 "~" H 6350 3550 50  0001 C CNN
+	1    6350 3550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J9
+U 1 1 5F937D3E
+P 6650 3750
+F 0 "J9" H 6650 3650 50  0000 C CNN
+F 1 "1A2" V 6750 3750 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 6650 3750 50  0001 C CNN
+F 3 "~" H 6650 3750 50  0001 C CNN
+	1    6650 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J13
+U 1 1 5F9387C4
+P 6850 3750
+F 0 "J13" H 6850 3650 50  0000 C CNN
+F 1 "1A1" V 6950 3750 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 6850 3750 50  0001 C CNN
+F 3 "~" H 6850 3750 50  0001 C CNN
+	1    6850 3750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6850 3950 6850 4100
+Wire Wire Line
+	6850 4100 7000 4100
+Wire Wire Line
+	12650 6850 12650 7150
+Wire Wire Line
+	12650 7150 13000 7150
+Connection ~ 13000 7150
+Wire Wire Line
+	13000 7150 13000 7550
+Wire Wire Line
+	12350 6850 12350 7150
+Wire Wire Line
+	12350 7150 11850 7150
+Connection ~ 11850 7150
+Wire Wire Line
+	11850 7150 11850 6850
+$Comp
+L Connector_Generic:Conn_01x01 J23
+U 1 1 5F9E82E5
+P 11850 1800
+F 0 "J23" H 11850 1700 50  0000 C CNN
+F 1 "1C1" V 11950 1800 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 11850 1800 50  0001 C CNN
+F 3 "~" H 11850 1800 50  0001 C CNN
+	1    11850 1800
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J24
+U 1 1 5F9EACA0
+P 12050 1650
+F 0 "J24" H 12050 1550 50  0000 C CNN
+F 1 "1C2" V 12150 1650 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 12050 1650 50  0001 C CNN
+F 3 "~" H 12050 1650 50  0001 C CNN
+	1    12050 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J25
+U 1 1 5F9EB217
+P 12300 1650
+F 0 "J25" H 12300 1550 50  0000 C CNN
+F 1 "1C3" V 12400 1650 50  0000 C CNN
+F 2 "Connector_Wire:SolderWire-0.25sqmm_1x01_D0.65mm_OD1.7mm" H 12300 1650 50  0001 C CNN
+F 3 "~" H 12300 1650 50  0001 C CNN
+	1    12300 1650
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	12050 1900 12050 1850
+NoConn ~ 12300 1850
 $EndSCHEMATC
